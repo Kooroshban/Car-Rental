@@ -11,13 +11,22 @@ const Header = () => {
         <Link to="/" className="h-8 shrink-0">
           <img src="/logo.svg" alt="" className="h-8 " />
         </Link>
+
+
         <Navbar />
+
+
         <button
           onClick={() => setNavbarOpen(!navbarOpen)}
           className="md:hidden"
         >
           <GiHamburgerMenu />
         </button>
+
+
+
+
+        
         {navbarOpen && <NavbarPhone setNavbarOpen={setNavbarOpen} />}
       </header>
     </>

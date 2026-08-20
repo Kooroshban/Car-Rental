@@ -1,4 +1,5 @@
 import Banner from "../Components/ui/Banner"
+import Featured from "../Components/ui/Featured"
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       <Banner/>
+      <Featured/>
         
       
     </>

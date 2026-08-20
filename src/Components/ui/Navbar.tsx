@@ -1,10 +1,11 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { IoSearchOutline } from "react-icons/io5";
 import { GoX } from "react-icons/go";
 
 import type { Dispatch, SetStateAction } from "react";
 
 const Navbar = () => {
+
   return (
     <>
       <ul className="hidden md:flex gap-8 text-gray-500 text-m font-medium items-center">
@@ -35,10 +36,16 @@ const Navbar = () => {
     </>
   );
 };
+
+
+
+
+
 interface navbarOpenProps {
   setNavbarOpen: Dispatch<SetStateAction<boolean>>;
 }
 export const NavbarPhone = ({ setNavbarOpen }: navbarOpenProps) => {
+  const navigate = useNavigate();
   return (
     <menu className="fixed z-50 bg-white flex flex-col inset-0">
       <section className="flex justify-between border-b-2 border-gray-200 py-4 px-6 ">
@@ -57,7 +64,10 @@ export const NavbarPhone = ({ setNavbarOpen }: navbarOpenProps) => {
 
       <ul className="flex flex-col md:hidden gap-5 text-gray-500 text-m p-4 font-medium">
         <li>
-          <Link to="/">Home</Link>
+          <button onClick={() => {
+            setNavbarOpen((prev) => !prev);
+            navigate("/");
+          }}>Home</button>
         </li>
         <li>
           <Link to="/cars">Cars</Link>
